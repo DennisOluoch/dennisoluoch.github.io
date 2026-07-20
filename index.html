@@ -122,6 +122,14 @@
                 text-decoration: underline;
             }
 
+            code {
+                background-color: #2d3748;
+                color: #90cdf4;
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-size: 0.9em;
+            }
+
             /* Responsive design */
             @media (max-width: 768px) {
                 header h1 {
@@ -182,27 +190,36 @@
                     <img src="/images/profile.jpg" alt="Dennis Olal">
                 </div>
                 <h1>Dennis Olal</h1>
-                <p>Web Developer | Svelte & TailwindCSS Specialist</p>
+                <p>Frontend Developer | Svelte & TypeScript Specialist</p>
             </div>
         </header>
 
         <main class="container">
             <section id="about">
                 <h2>About Me</h2>
-                <p>Experienced web developer with over 6 years of coding expertise, specializing in Svelte and
-                    TailwindCSS. Proven track record in creating efficient, responsive web applications. Passionate
-                    about staying updated with the latest web development trends and technologies.</p>
+                <p>Frontend developer with over 6 years of coding experience, specializing in Svelte 5 (runes),
+                    TypeScript, and TailwindCSS. Since 2024, I've worked remotely as a frontend developer at
+                    Syself, a Germany-based company, building out an admin platform alongside sharp engineers
+                    across different domains.</p>
+                <p style="margin-top: 15px;">Outside of client work, I also dabble in independent projects,
+                    including a small education/training venture, which keeps me sharp on business and marketing
+                    automation.</p>
+                <p style="margin-top: 15px;">Outside client and business work, I build pet projects for fun —
+                    including a crypto trading platform and payment gateway integrations — all in Svelte, because
+                    it's what I reach for by default.</p>
             </section>
 
             <section id="skills">
                 <h2>Skills</h2>
                 <div class="skills-list">
-                    <span class="skill-item">Svelte</span>
+                    <span class="skill-item">Svelte 5 (Runes)</span>
+                    <span class="skill-item">SvelteKit</span>
+                    <span class="skill-item">TypeScript</span>
                     <span class="skill-item">TailwindCSS</span>
-                    <span class="skill-item">React.js</span>
-                    <span class="skill-item">HTML5</span>
-                    <span class="skill-item">CSS3</span>
-                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">shadcn-svelte</span>
+                    <span class="skill-item">Supabase</span>
+                    <span class="skill-item">Ory</span>
+                    <span class="skill-item">Playwright</span>
                     <span class="skill-item">Git</span>
                     <span class="skill-item">Figma</span>
                     <span class="skill-item">Responsive Design</span>
@@ -212,33 +229,157 @@
 
             <section id="projects">
                 <h2>Projects</h2>
+                <p style="margin-bottom: 20px; color: #a0aec0;">The following are areas I've owned while working
+                    remotely as a frontend developer at <strong>Syself</strong> (Germany-based) since 2024, across
+                    the admin, organization, and desktop layers of the platform.</p>
+
                 <div class="project">
-                    <h3>AcademiaScribes.com</h3>
+                    <h3>Role-Based Access Control (RBAC) System</h3>
                     <div class="project-details">
                         <div class="project-info">
-                            <p><strong>Technologies:</strong> Svelte, TailwindCSS, Appwrite, Vercel</p>
+                            <p><strong>Technologies:</strong> SvelteKit, Svelte 5 (Runes), TypeScript,
+                                shadcn-svelte</p>
                             <p><strong>Key Features:</strong></p>
                             <ul>
-                                <li>Responsive design for optimal viewing on all devices</li>
-                                <li>Dynamic content management using Appwrite</li>
-                                <li>Serverless architecture for improved scalability</li>
-                                <li>Optimized image storage and delivery</li>
-                                <li>SEO-friendly structure resulting in organic growth</li>
+                                <li>Designed the role/permission architecture spanning platform, organization,
+                                    and workspace levels (<code>SyselfRole</code>, <code>OrganizationRole</code>,
+                                    <code>WorkspaceRole</code>)
+                                </li>
+                                <li>Built reusable authorization utilities (<code>can()</code>,
+                                    <code>createSyselfCan()</code>) used across the admin, organization, and
+                                    desktop layers
+                                </li>
+                                <li>Implemented route guards and fine-grained UI permission checks so pages and
+                                    controls respect a user's role at every level</li>
+                                <li>Built permission-aware data tables with shadcn-svelte across multiple
+                                    layers of the platform</li>
                             </ul>
-                            <p><strong>Achievements:</strong></p>
-                            <ul>
-                                <li>Over 1.8K visitors in 5 months with organic growth</li>
-                                <li>50.2K impressions according to Google Search Console</li>
-                                <li>$0 monthly hosting costs, with only an $11 annual domain fee</li>
-                            </ul>
-                            <p><a href="https://academiascribes.com" target="_blank">Visit Website</a></p>
                         </div>
-                        <div class="project-image">
-                            <img src="/images/hero.png" alt="AcademiaScribes.com Screenshot">
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3>Authentication & Identity (Ory)</h3>
+                    <div class="project-details">
+                        <div class="project-info">
+                            <p><strong>Technologies:</strong> SvelteKit, TypeScript, Ory Kratos</p>
+                            <p><strong>Key Features:</strong></p>
+                            <ul>
+                                <li>Deep working knowledge of Ory Kratos, used across authentication flows on
+                                    the platform</li>
+                                <li>Built two-factor authentication flows: TOTP setup plus backup/recovery codes,
+                                    including the server-side confirmation handshake</li>
+                                <li>Implemented secondary email management and social account linking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3>Payments & Billing</h3>
+                    <div class="project-details">
+                        <div class="project-info">
+                            <p><strong>Technologies:</strong> SvelteKit, TypeScript, Stripe, Superforms</p>
+                            <p><strong>Key Features:</strong></p>
+                            <ul>
+                                <li>Integrated Stripe across both the admin and organization layers</li>
+                                <li>Worked with SEPA direct debit payment handling for EU billing</li>
+                                <li>Built VAT validation error handling integrated with Superforms, giving users
+                                    clear feedback on billing detail issues</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3>Domain Verification</h3>
+                    <div class="project-details">
+                        <div class="project-info">
+                            <p><strong>Technologies:</strong> SvelteKit, TypeScript</p>
+                            <p><strong>Key Features:</strong></p>
+                            <ul>
+                                <li>Built the domain DNS verification dialog component, guiding users through
+                                    confirming ownership before a custom domain goes live</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3>Testing & Platform Reliability</h3>
+                    <div class="project-details">
+                        <div class="project-info">
+                            <p><strong>Technologies:</strong> Playwright, TypeScript</p>
+                            <p><strong>Key Features:</strong></p>
+                            <ul>
+                                <li>Consolidated 13+ duplicated date-formatting functions into shared utilities
+                                    (<code>formatDateTime</code>, <code>formatDateOnly</code>,
+                                    <code>formatBillingPeriod</code>)
+                                </li>
+                                <li>Wrote Playwright end-to-end tests covering critical platform flows</li>
+                            </ul>
+                            <p><strong>Achievement:</strong></p>
+                            <ul>
+                                <li>Drove the outstanding admin platform issue count down from 100+ to 2</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <section id="pet-projects">
+                <h2>Pet Projects</h2>
+                <p style="margin-bottom: 20px; color: #a0aec0;">Additional projects — built in Svelte.</p>
+
+                <div class="project">
+                    <h3>Crypto Trading Platform (Client Project)</h3>
+                    <div class="project-details">
+                        <div class="project-info">
+                            <p style="margin-bottom: 10px; color: #a0aec0;"><em>Name withheld at the client's
+                                    request.</em></p>
+                            <p><strong>Technologies:</strong> SvelteKit, Supabase, Bun, lightweight-charts</p>
+                            <p><strong>Key Features:</strong></p>
+                            <ul>
+                                <li>Built a live area-series price chart using <code>lightweight-charts</code>,
+                                    with theme-specific styling to work around oklch color-parser limitations</li>
+                                <li>Designed and implemented a custom teal-based visual theme end to end</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3>Payment Gateway Integration — M-Pesa Wallet</h3>
+                    <div class="project-details">
+                        <div class="project-info">
+                            <p><strong>Technologies:</strong> SvelteKit, PayHero API</p>
+                            <p><strong>Key Features:</strong></p>
+                            <ul>
+                                <li>Built deposit and withdrawal flows against the PayHero M-Pesa API for an
+                                    internal wallet system</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3>Training Platform</h3>
+                    <div class="project-details">
+                        <div class="project-info">
+                            <p><strong>Technologies:</strong> SvelteKit, Supabase, Claude, Upstash Workflow</p>
+                            <p><strong>Key Features:</strong></p>
+                            <ul>
+                                <li>Small independent course-brokerage platform</li>
+                                <li>Built an automated content pipeline (blog generation, social posting across
+                                    LinkedIn, Facebook, Threads, Reddit, Instagram, and a weekly newsletter)</li>
+                                <li>Implemented SEO fundamentals: enriched metadata, Course/FAQPage/BreadcrumbList
+                                    JSON-LD schema, and analytics/consent flows</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
             <section id="education">
                 <h2>Education</h2>
@@ -248,9 +389,7 @@
 
             <section id="contact">
                 <h2>Contact</h2>
-                <p>Email: <a href="mailto:olal@academiascribes.com">olal@academiascribes.com</a> | <a
-                        href="mailto:olaldennis@gmail.com">olaldennis@gmail.com</a></p>
-                <p>Website: <a href="https://academiascribes.com" target="_blank">academiascribes.com</a></p>
+                <p>Email: <a href="mailto:olaldennis@gmail.com">olaldennis@gmail.com</a></p>
                 <p>LinkedIn: <a href="https://www.linkedin.com/in/dennis-olal-4629b01b4/" target="_blank">Dennis
                         Olal</a></p>
                 <p>GitHub: <a href="https://github.com/DennisOluoch" target="_blank">Dennis Oluoch</a></p>
